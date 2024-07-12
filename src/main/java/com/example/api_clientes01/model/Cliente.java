@@ -18,9 +18,9 @@ public class Cliente {
     private String correo;
     private String direccion;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "pais_id")
-    @JsonBackReference
+//    @JsonBackReference
     private Pais pais;
 
     // Getters y setters

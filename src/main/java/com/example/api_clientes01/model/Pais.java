@@ -1,5 +1,6 @@
 package com.example.api_clientes01.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -16,7 +17,8 @@ public class Pais {
     private String nombre;
 
     @OneToMany(mappedBy = "pais", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+   // @JsonManagedReference
+    @JsonBackReference
     private List<Cliente> clientes;
 
     // Getters y setters
